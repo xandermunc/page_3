@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        /* #region DEFAULT */
+        :root {
+            --white: #eee;
+            --black: #111;
+            --curve: cubic-bezier(0.2, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--black);
+        }
+
+        p {
+            font-family: system-ui;
+            font-size: 1em;
+            color: var(--white);
+        }
+
+        /* #endregion */
+
+        /* #region FRAME */
+        .frame {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-radius: 10px;
+            background-color: var(--white);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--white);
+            z-index: 1;
+            transition: width 0.6s var(--curve), height 0.6s var(--curve), background-color 0.6s var(--curve);
+        }
+
+        .frame.active {
+            position: absolute;
+            width: 30vw;
+            height: 30vw;
+            background-color: transparent;
+        }
+
+        .frame.active:hover {
+            width: 31vw;
+            height: 31vw;
+        }
+
+        /* #endregion */
+
+        /* #region SVG STYLES */
+        .l2,
+        .r2,
+        .t2,
+        .b2,
+        .s2 {
+            transition: all 0.6s var(--curve);
+        }
+
+        .t2 {
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
+
+        .b2 {
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
+
+        .s2 {
+            transform: scale(0.1);
+            transform-origin: center;
+        }
+
+        .svg2:hover .l2 {
+            transform: translateX(-20px);
+        }
+
+        .svg2:hover .r2 {
+            transform: translateX(20px);
+        }
+
+        .svg2:hover .t2 {
+            transform: rotate(90deg) translateX(-20px);
+        }
+
+        .svg2:hover .b2 {
+            transform: rotate(90deg) translateX(20px);
+        }
+
+        .svg2:hover .s2 {
+            transform: scale(1);
+        }
+
+        .l2.active,
+        .svg2:hover .l2.active {
+            transform: translateX(-32px);
+        }
+
+        .r2.active,
+        .svg2:hover .r2.active {
+            transform: translateX(32px);
+        }
+
+        .t2.active,
+        .svg2:hover .t2.active {
+            transform: rotate(90deg) translateX(-32px);
+        }
+
+        .b2.active,
+        .svg2:hover .b2.active {
+            transform: rotate(90deg) translateX(32px);
+        }
+
+        .s2.active,
+        .svg2:hover .s2.active {
+            transform: scale(1.4);
+        }
+
+        .svg2 {
+            transform-origin: center;
+            transition: all 0.6s var(--curve);
+        }
+
+        /* #endregion */
+    </style>
+</head>
+
+<body>
+    <div class="frame draggable"></div>
+    <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <rect class="l2" x="32" width="4" height="72" fill="var(--white)" />
+        <rect class="r2" x="36" width="4" height="72" fill="var(--white)" />
+        <rect class="t2" x="32" width="4" height="72" fill="var(--white)" />
+        <rect class="b2" x="36" width="4" height="72" fill="var(--white)" />
+        <rect class="s2" x="12" y="12" width="48" height="48" fill="var(--white)" />
+    </svg>
+
+    <script>
+        // #region SVG / FRAME ANIMATION        
+        const svg2 = document.querySelector('.svg2');
+        const frame = document.querySelector('.frame');
+        const l2 = document.querySelector('.l2');
+        const r2 = document.querySelector('.r2');
+        const t2 = document.querySelector('.t2');
+        const b2 = document.querySelector('.b2');
+        const s2 = document.querySelector('.s2');
+        const body = document.body;
+
+        svg2.addEventListener('click', function (event) {
+            event.stopPropagation();
+            frame.classList.add('active');
+            l2.classList.add('active');
+            r2.classList.add('active');
+            t2.classList.add('active');
+            b2.classList.add('active');
+            s2.classList.add('active');
+        });
+
+        body.addEventListener('click', function (event) {
+            if (!frame.contains(event.target)) {
+                frame.classList.remove('active');
+                l2.classList.remove('active');
+                r2.classList.remove('active');
+                t2.classList.remove('active');
+                b2.classList.remove('active');
+                s2.classList.remove('active');
+            }
+        });
+        // #endregion
+
+        // #region DRAGGING 
+        const draggables = document.querySelectorAll('.draggable');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - draggable.getBoundingClientRect().left;
+                offsetY = e.clientY - draggable.getBoundingClientRect().top;
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                draggables.forEach(draggable => {
+                    draggable.style.left = `${e.clientX - offsetX}px`;
+                    draggable.style.top = `${e.clientY - offsetY}px`;
+                });
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // #endregion
+    </script>
+</body>
+
+</html>
