@@ -184,6 +184,11 @@
             transition: opacity 0.4s var(--curve);
         }
 
+        a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
         h1.active,
         h2.active,
         p.active {
@@ -219,8 +224,9 @@
             height: 100px;
         }
 
-        .center {
+        .centered {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 100%;
@@ -260,7 +266,7 @@
                 <i class="blue">repellendus ad necessitatibus.</i>
             </p>
             <div class="spacer"></div>
-            <div class="center">
+            <div class="centered">
                 <div id="clock"></div>
             </div>
             <div class="spacer"></div>
@@ -271,7 +277,14 @@
                 --blue: #09f;
                 --yellow: #f90;
                 --curve: cubic-bezier(0.2, 0, 0.2, 1);
-            }</p>
+                }
+            </p>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="centered">
+                <p>Last updated: 12/25/24</p>
+                <a href="https://github.com/xandermunc/page_3">dev log</a>
+            </div>
         </div>
     </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
