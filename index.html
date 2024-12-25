@@ -10,6 +10,9 @@
         :root {
             --white: #eee;
             --black: #111;
+            --red: #f30;
+            --blue: #09f;
+            --yellow: #f90;
             --curve: cubic-bezier(0.2, 0, 0.2, 1);
         }
 
@@ -160,6 +163,16 @@
             transition: opacity 0.4s var(--curve);
         }
 
+        h2 {
+            color: var(--white);
+            font-size: 1.2em;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.4s var(--curve);
+        }
+
         p {
             color: var(--white);
             font-size: 1em;
@@ -171,8 +184,21 @@
         }
 
         h1.active,
+        h2.active,
         p.active {
             opacity: 1;
+        }
+
+        .red {
+            color: var(--red);
+        }
+
+        .blue {
+            color: var(--blue);
+        }
+
+        .yellow {
+            color: var(--yellow);
         }
 
         .bg {
@@ -200,10 +226,13 @@
     <div class="frame draggable">
         <div class="bg">
             <h1>Header</h1>
+            <h2 class="yellow">Testing</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam sint consectetur
-                doloremque inventore aperiam, corrupti possimus delectus iusto nam nostrum necessitatibus natus
+                doloremque inventore <strong class="red">aperiam</strong>, corrupti possimus delectus iusto nam nostrum
+                necessitatibus natus
                 expedita, voluptatum esse totam atque culpa quos repellendus illum ea numquam, optio id! Debitis
-                repellendus ad necessitatibus.</p>
+                <i class="blue">repellendus ad necessitatibus.</i>
+            </p>
         </div>
     </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
@@ -224,6 +253,7 @@
         const b2 = document.querySelector('.b2');
         const s2 = document.querySelector('.s2');
         const h1 = document.querySelector('h1');
+        const h2 = document.querySelector('h2');
         const p = document.querySelector('p');
 
         const body = document.body;
@@ -237,6 +267,7 @@
             b2.classList.add('active');
             s2.classList.add('active');
             h1.classList.add('active');
+            h2.classList.add('active');
             p.classList.add('active');
         });
 
@@ -249,6 +280,7 @@
                 b2.classList.remove('active');
                 s2.classList.remove('active');
                 h1.classList.remove('active');
+                h2.classList.remove('active');
                 p.classList.remove('active');
             }
         });
@@ -313,6 +345,8 @@
                 isDragging = false;
             }
         });
+
+        
 
         // #endregion
     </script>
