@@ -69,10 +69,10 @@
             -ms-overflow-style: none;
         }
 
-        .frame.active:hover {
+        /* .frame.active:hover {
             width: 31vw;
             height: 31vw;
-        }
+        } */
 
         .frame.active::-webkit-scrollbar {
             display: none;
@@ -194,8 +194,6 @@
             color: var(--yellow);
         }
 
-
-
         h1.active,
         h2.active,
         p.active {
@@ -263,7 +261,7 @@
 
 <body>
     <div class="frame draggable">
-        <div class="bg">
+        <!-- <div class="bg"> -->
             <h1>Page_3</h1>
             <h2 class="yellow">About</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam sint consectetur
@@ -277,6 +275,8 @@
                 <div id="clock"></div>
             </div>
             <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
             <p class="mono">:root {
                 --white: #eee;
                 --black: #111;
@@ -286,13 +286,12 @@
                 --curve: cubic-bezier(0.2, 0, 0.2, 1);
                 }
             </p>
-            <div class="spacer"></div>
-            <div class="spacer"></div>
             <div class="centered">
                 <p>Last updated: 12/25/24 </p>
                 <a href="https://github.com/xandermunc/page_3">dev log</a>
+                <br>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
         <rect class="l2" x="32" width="4" height="72" fill="var(--white)" />
