@@ -27,6 +27,8 @@
             justify-content: center;
             align-items: center;
             background-color: var(--black);
+            font-family: system-ui;
+            cursor: default;
         }
 
         p {
@@ -45,21 +47,30 @@
             border-radius: 10px;
             background-color: var(--white);
             backdrop-filter: blur(5px);
-            border: 1px solid var(--white);
+            border: 0px solid var(--white);
             z-index: 1;
+            overflow: hidden;
             transition: width 0.6s var(--curve), height 0.6s var(--curve), background-color 0.6s var(--curve);
         }
 
         .frame.active {
+            border: 1px solid var(--white);
             position: absolute;
             width: 30vw;
             height: 30vw;
             background-color: transparent;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .frame.active:hover {
             width: 31vw;
             height: 31vw;
+        }
+
+        .frame.active::-webkit-scrollbar {
+            display: none;
         }
 
         /* #endregion */
@@ -139,11 +150,44 @@
         }
 
         /* #endregion */
+
+        h1 {
+            color: var(--white);
+            font-size: 1.5em;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.4s var(--curve);
+        }
+
+        h1.active {
+            opacity: 1;
+        }
+
+        .bg {
+            height: 100vh;
+            /* background-color: turquoise; */
+            overflow: auto;
+        }
+
+        @media (max-width: 650px) {
+            body {
+                height: 95vh;
+            }
+
+            .frame.active {
+                width: 90vw;
+                height: 90vw;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="frame draggable"></div>
+    <div class="frame draggable">
+        <div class="bg">
+            <h1>Header</h1>
+        </div>
+    </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
         <rect class="l2" x="32" width="4" height="72" fill="var(--white)" />
         <rect class="r2" x="36" width="4" height="72" fill="var(--white)" />
@@ -161,6 +205,7 @@
         const t2 = document.querySelector('.t2');
         const b2 = document.querySelector('.b2');
         const s2 = document.querySelector('.s2');
+        const h1 = document.querySelector('h1');
         const body = document.body;
 
         svg2.addEventListener('click', function (event) {
@@ -171,6 +216,7 @@
             t2.classList.add('active');
             b2.classList.add('active');
             s2.classList.add('active');
+            h1.classList.add('active');
         });
 
         body.addEventListener('click', function (event) {
@@ -181,8 +227,10 @@
                 t2.classList.remove('active');
                 b2.classList.remove('active');
                 s2.classList.remove('active');
+                h1.classList.remove('active');
             }
         });
+
         // #endregion
 
         // #region DRAGGING 
@@ -208,7 +256,40 @@
         });
 
         document.addEventListener('mouseup', () => {
-            isDragging = false;
+            if (isDragging) {
+                // const rect = frame.getBoundingClientRect();
+                // frame.style.transform = `translate(-50%, -50%)`;
+                // frame.style.left = `${rect.left + rect.width / 2}px`;
+                // frame.style.top = `${rect.top + rect.height / 2}px`;
+                isDragging = false;
+            }
+        });
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - draggable.getBoundingClientRect().left;
+                offsetY = e.clientY - draggable.getBoundingClientRect().top;
+            });
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                draggables.forEach(draggable => {
+                    draggable.style.left = `${e.clientX - offsetX}px`;
+                    draggable.style.top = `${e.clientY - offsetY}px`;
+                });
+            }
+        });
+
+        document.addEventListener('touchend', () => {
+            if (isDragging) {
+                // const rect = frame.getBoundingClientRect();
+                // frame.style.transform = `translate(-50%, -50%)`;
+                // frame.style.left = `${rect.left + rect.width / 2}px`;
+                // frame.style.top = `${rect.top + rect.height / 2}px`;
+                isDragging = false;
+            }
         });
 
         // #endregion
