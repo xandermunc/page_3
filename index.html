@@ -29,6 +29,7 @@
             background-color: var(--black);
             font-family: system-ui;
             cursor: default;
+            overflow: hidden;
         }
 
         p {
@@ -58,7 +59,7 @@
             position: absolute;
             width: 30vw;
             height: 30vw;
-            background-color: transparent;
+            background-color: rgba(17, 17, 17, 0.5);
             overflow-y: scroll;
             scrollbar-width: none;
             -ms-overflow-style: none;
@@ -159,7 +160,17 @@
             transition: opacity 0.4s var(--curve);
         }
 
-        h1.active {
+        p {
+            color: var(--white);
+            font-size: 1em;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.4s var(--curve);
+        }
+
+        h1.active,
+        p.active {
             opacity: 1;
         }
 
@@ -186,6 +197,10 @@
     <div class="frame draggable">
         <div class="bg">
             <h1>Header</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam sint consectetur
+                doloremque inventore aperiam, corrupti possimus delectus iusto nam nostrum necessitatibus natus
+                expedita, voluptatum esse totam atque culpa quos repellendus illum ea numquam, optio id! Debitis
+                repellendus ad necessitatibus.</p>
         </div>
     </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
@@ -206,6 +221,8 @@
         const b2 = document.querySelector('.b2');
         const s2 = document.querySelector('.s2');
         const h1 = document.querySelector('h1');
+        const p = document.querySelector('p');
+
         const body = document.body;
 
         svg2.addEventListener('click', function (event) {
@@ -217,6 +234,7 @@
             b2.classList.add('active');
             s2.classList.add('active');
             h1.classList.add('active');
+            p.classList.add('active');
         });
 
         body.addEventListener('click', function (event) {
@@ -228,6 +246,7 @@
                 b2.classList.remove('active');
                 s2.classList.remove('active');
                 h1.classList.remove('active');
+                p.classList.remove('active');
             }
         });
 
@@ -265,32 +284,32 @@
             }
         });
 
-        draggables.forEach(draggable => {
-            draggable.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - draggable.getBoundingClientRect().left;
-                offsetY = e.clientY - draggable.getBoundingClientRect().top;
-            });
-        });
+        // draggables.forEach(draggable => {
+        //     draggable.addEventListener('touchstart', (e) => {
+        //         isDragging = true;
+        //         offsetX = e.clientX - draggable.getBoundingClientRect().left;
+        //         offsetY = e.clientY - draggable.getBoundingClientRect().top;
+        //     });
+        // });
 
-        document.addEventListener('touchmove', (e) => {
-            if (isDragging) {
-                draggables.forEach(draggable => {
-                    draggable.style.left = `${e.clientX - offsetX}px`;
-                    draggable.style.top = `${e.clientY - offsetY}px`;
-                });
-            }
-        });
+        // document.addEventListener('touchmove', (e) => {
+        //     if (isDragging) {
+        //         draggables.forEach(draggable => {
+        //             draggable.style.left = `${e.clientX - offsetX}px`;
+        //             draggable.style.top = `${e.clientY - offsetY}px`;
+        //         });
+        //     }
+        // });
 
-        document.addEventListener('touchend', () => {
-            if (isDragging) {
-                // const rect = frame.getBoundingClientRect();
-                // frame.style.transform = `translate(-50%, -50%)`;
-                // frame.style.left = `${rect.left + rect.width / 2}px`;
-                // frame.style.top = `${rect.top + rect.height / 2}px`;
-                isDragging = false;
-            }
-        });
+        // document.addEventListener('touchend', () => {
+        //     if (isDragging) {
+        //         // const rect = frame.getBoundingClientRect();
+        //         // frame.style.transform = `translate(-50%, -50%)`;
+        //         // frame.style.left = `${rect.left + rect.width / 2}px`;
+        //         // frame.style.top = `${rect.top + rect.height / 2}px`;
+        //         isDragging = false;
+        //     }
+        // });
 
         // #endregion
     </script>
