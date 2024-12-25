@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG</title>
+    <title>page_3</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
         /* #region DEFAULT */
         :root {
@@ -158,7 +159,7 @@
         h1 {
             color: var(--white);
             font-size: 1.5em;
-            padding: 10px;
+            padding: 15px;
             opacity: 0;
             transition: opacity 0.4s var(--curve);
         }
@@ -166,9 +167,9 @@
         h2 {
             color: var(--white);
             font-size: 1.2em;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
             opacity: 0;
             transition: opacity 0.4s var(--curve);
         }
@@ -176,9 +177,9 @@
         p {
             color: var(--white);
             font-size: 1em;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
             opacity: 0;
             transition: opacity 0.4s var(--curve);
         }
@@ -201,14 +202,24 @@
             color: var(--yellow);
         }
 
+        .mono {
+            font-family: monospace;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
         .bg {
             height: 100vh;
             /* background-color: turquoise; */
             overflow: auto;
         }
 
+        .spacer {
+            width: 100%;
+            height: 100px;
+        }
+
         .center {
-            padding-top: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -240,17 +251,27 @@
 <body>
     <div class="frame draggable">
         <div class="bg">
-            <h1>Header</h1>
-            <h2 class="yellow">Testing</h2>
+            <h1>Page_3</h1>
+            <h2 class="yellow">About</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam sint consectetur
                 doloremque inventore <strong class="red">aperiam</strong>, corrupti possimus delectus iusto nam nostrum
                 necessitatibus natus
                 expedita, voluptatum esse totam atque culpa quos repellendus illum ea numquam, optio id! Debitis
                 <i class="blue">repellendus ad necessitatibus.</i>
             </p>
+            <div class="spacer"></div>
             <div class="center">
                 <div id="clock"></div>
             </div>
+            <div class="spacer"></div>
+            <p class="mono">:root {
+                --white: #eee;
+                --black: #111;
+                --red: #f30;
+                --blue: #09f;
+                --yellow: #f90;
+                --curve: cubic-bezier(0.2, 0, 0.2, 1);
+            }</p>
         </div>
     </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
@@ -270,9 +291,9 @@
         const t2 = document.querySelector('.t2');
         const b2 = document.querySelector('.b2');
         const s2 = document.querySelector('.s2');
-        const h1 = document.querySelector('h1');
-        const h2 = document.querySelector('h2');
-        const p = document.querySelector('p');
+        const h1 = document.querySelectorAll('h1');
+        const h2 = document.querySelectorAll('h2');
+        const p = document.querySelectorAll('p');
 
         const body = document.body;
 
@@ -284,9 +305,9 @@
             t2.classList.add('active');
             b2.classList.add('active');
             s2.classList.add('active');
-            h1.classList.add('active');
-            h2.classList.add('active');
-            p.classList.add('active');
+            h1.forEach(el => el.classList.add('active'));
+            h2.forEach(el => el.classList.add('active'));
+            p.forEach(el => el.classList.add('active'));
         });
 
         body.addEventListener('click', function (event) {
@@ -297,11 +318,12 @@
                 t2.classList.remove('active');
                 b2.classList.remove('active');
                 s2.classList.remove('active');
-                h1.classList.remove('active');
-                h2.classList.remove('active');
-                p.classList.remove('active');
+                h1.forEach(el => el.classList.remove('active'));
+                h2.forEach(el => el.classList.remove('active'));
+                p.forEach(el => el.classList.remove('active'));
             }
         });
+
 
         // #endregion
 
@@ -335,7 +357,9 @@
                 // frame.style.top = `${rect.top + rect.height / 2}px`;
                 isDragging = false;
             }
-        });        
+        });
+
+        // #endregion
 
         function updateClock() {
             const now = new Date();
@@ -347,7 +371,6 @@
 
         setInterval(updateClock, 1000);
         updateClock();
-        // #endregion
     </script>
 </body>
 
