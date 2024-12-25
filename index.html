@@ -164,6 +164,7 @@
             color: var(--white);
             font-size: 1em;
             padding-left: 10px;
+            padding-right: 10px;
             padding-bottom: 10px;
             opacity: 0;
             transition: opacity 0.4s var(--curve);
@@ -286,32 +287,32 @@
             }
         });
 
-        // draggables.forEach(draggable => {
-        //     draggable.addEventListener('touchstart', (e) => {
-        //         isDragging = true;
-        //         offsetX = e.clientX - draggable.getBoundingClientRect().left;
-        //         offsetY = e.clientY - draggable.getBoundingClientRect().top;
-        //     });
-        // });
+        draggables.forEach(draggable => {
+            draggable.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - draggable.getBoundingClientRect().left;
+                offsetY = e.clientY - draggable.getBoundingClientRect().top;
+            });
+        });
 
-        // document.addEventListener('touchmove', (e) => {
-        //     if (isDragging) {
-        //         draggables.forEach(draggable => {
-        //             draggable.style.left = `${e.clientX - offsetX}px`;
-        //             draggable.style.top = `${e.clientY - offsetY}px`;
-        //         });
-        //     }
-        // });
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                draggables.forEach(draggable => {
+                    draggable.style.left = `${e.clientX - offsetX}px`;
+                    draggable.style.top = `${e.clientY - offsetY}px`;
+                });
+            }
+        });
 
-        // document.addEventListener('touchend', () => {
-        //     if (isDragging) {
-        //         // const rect = frame.getBoundingClientRect();
-        //         // frame.style.transform = `translate(-50%, -50%)`;
-        //         // frame.style.left = `${rect.left + rect.width / 2}px`;
-        //         // frame.style.top = `${rect.top + rect.height / 2}px`;
-        //         isDragging = false;
-        //     }
-        // });
+        document.addEventListener('touchend', () => {
+            if (isDragging) {
+                // const rect = frame.getBoundingClientRect();
+                // frame.style.transform = `translate(-50%, -50%)`;
+                // frame.style.left = `${rect.left + rect.width / 2}px`;
+                // frame.style.top = `${rect.top + rect.height / 2}px`;
+                isDragging = false;
+            }
+        });
 
         // #endregion
     </script>
