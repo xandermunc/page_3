@@ -207,6 +207,21 @@
             overflow: auto;
         }
 
+        .center {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #clock {
+            color: var(--red);
+            font-size: 1.5em;
+            padding: 10px;
+            align-self: center;
+        }
+
         @media (max-width: 650px) {
             body {
                 height: 95vh;
@@ -233,6 +248,9 @@
                 expedita, voluptatum esse totam atque culpa quos repellendus illum ea numquam, optio id! Debitis
                 <i class="blue">repellendus ad necessitatibus.</i>
             </p>
+            <div class="center">
+                <div id="clock"></div>
+            </div>
         </div>
     </div>
     <svg class="svg2" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
@@ -317,37 +335,18 @@
                 // frame.style.top = `${rect.top + rect.height / 2}px`;
                 isDragging = false;
             }
-        });
+        });        
 
-        draggables.forEach(draggable => {
-            draggable.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - draggable.getBoundingClientRect().left;
-                offsetY = e.clientY - draggable.getBoundingClientRect().top;
-            });
-        });
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
 
-        document.addEventListener('touchmove', (e) => {
-            if (isDragging) {
-                draggables.forEach(draggable => {
-                    draggable.style.left = `${e.clientX - offsetX}px`;
-                    draggable.style.top = `${e.clientY - offsetY}px`;
-                });
-            }
-        });
-
-        document.addEventListener('touchend', () => {
-            if (isDragging) {
-                // const rect = frame.getBoundingClientRect();
-                // frame.style.transform = `translate(-50%, -50%)`;
-                // frame.style.left = `${rect.left + rect.width / 2}px`;
-                // frame.style.top = `${rect.top + rect.height / 2}px`;
-                isDragging = false;
-            }
-        });
-
-        
-
+        setInterval(updateClock, 1000);
+        updateClock();
         // #endregion
     </script>
 </body>
