@@ -1,0 +1,32 @@
+.frame {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 10px;
+    background-color: var(--white);
+    backdrop-filter: blur(5px);
+    border: 0px solid var(--white);
+    z-index: 1;
+    overflow: hidden;
+    transition: width 0.6s var(--curve), height 0.6s var(--curve), background-color 0.6s var(--curve);
+}
+
+.frame.active {
+    border: 1px solid var(--white);
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    background-color: rgba(17, 17, 17, 0.5);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* .frame.active:hover {
+            width: 31vw;
+            height: 31vw;
+        } */
+
+.frame.active::-webkit-scrollbar {
+    display: none;
+}

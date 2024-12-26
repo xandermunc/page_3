@@ -1,0 +1,81 @@
+.l-2,
+.r-2,
+.t-2,
+.b-2,
+.s-2 {
+    transition: all 0.6s var(--curve);
+}
+
+.t-2 {
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.b-2 {
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.s-2 {
+    transform: scale(0.1);
+    transform-origin: center;
+}
+
+.svg-2:hover .l-2 {
+    transform: translateX(-20px);
+}
+
+.svg-2:hover .r-2 {
+    transform: translateX(20px);
+}
+
+.svg-2:hover .t-2 {
+    transform: rotate(90deg) translateX(-20px);
+}
+
+.svg-2:hover .b-2 {
+    transform: rotate(90deg) translateX(20px);
+}
+
+.svg-2:hover .s-2 {
+    transform: scale(1);
+}
+
+.l-2.active,
+.svg-2:hover .l-2.active {
+    transform: translateX(-32px);
+}
+
+.r-2.active,
+.svg-2:hover .r-2.active {
+    transform: translateX(32px);
+}
+
+.t-2.active,
+.svg-2:hover .t-2.active {
+    transform: rotate(90deg) translateX(-32px);
+}
+
+.b-2.active,
+.svg-2:hover .b-2.active {
+    transform: rotate(90deg) translateX(32px);
+}
+
+.s-2.active,
+.svg-2:hover .s-2.active {
+    transform: scale(1.4);
+}
+
+.svg-2 {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: center;
+    transition: all 0.6s var(--curve);
+}
+
+.svg-2.active {
+    max-height: 72px;
+    opacity: 1;
+    visibility: visible;
+}
