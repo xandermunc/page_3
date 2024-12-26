@@ -30,3 +30,13 @@
 .frame.active::-webkit-scrollbar {
     display: none;
 }
+
+@media (max-width: 650px) {
+
+    .frame.active,
+    .frame.active:hover {
+        width: 90vw;
+        height: 90vw;
+    }
+
+}

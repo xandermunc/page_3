@@ -147,11 +147,4 @@ p.active {
     body {
         height: 95vh;
     }
-
-    .frame.active,
-    .frame.active:hover {
-        width: 90vw;
-        height: 90vw;
-    }
-
 }
