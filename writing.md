@@ -34,7 +34,7 @@ X has a team of like-minded and diversely skilled individuals to help him collec
 
 Page Three is not updated on a schedule. Which means you'll have to check periodically to see if it is updated. Or, if you know XM in real life (you probably do) you can ask him directly. Here are a few ways to try: 
     1. "Hey X is that stupid page you texted me a while ago updated?"
-    2. *In a letter* "Dearest Xander, your content on page_3 astonished my mind and tantalized my senses. When, oh, when will more delectable articles be published for me to enjoy?"
+    2. *In a letter:* "Dearest Xander, your content on page_3 astonished my mind and tantalized my senses. When, oh, when will more delectable articles be published for me to enjoy?"
     3. "Обновляется ли ваша личная рассылка?"
 
 The *"Updates section"* at the top of the newsletter might include the line *"new material"* from time to time. This only appears for the first few days after content is updated. If you would like to view previous uploads (of which there are currently none) X will work on a way to view archived versions in the future. 
