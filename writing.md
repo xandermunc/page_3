@@ -37,7 +37,7 @@ Page Three is not updated on a schedule. Which means you'll have to check period
     2. *In a letter:* "Dearest Xander, your content on page_3 astonished my mind and tantalized my senses. When, oh, when will more delectable articles be published for me to enjoy?"
     3. "Обновляется ли ваша личная рассылка?"
 
-The *"Updates section"* at the top of the newsletter might include the line *"new material"* from time to time. This only appears for the first few days after content is updated. If you would like to view previous uploads (of which there are currently none) X will work on a way to view archived versions in the future. 
+The *Updates section* at the top of the newsletter might include the line *new material* from time to time. This only appears for the first few days after content is updated. If you would like to view previous uploads (of which there are currently none) X will work on a way to view archived versions in the future. 
 
 ### 2. Links 
 
