@@ -5,7 +5,7 @@
 
 ## About 
 
-Page Three (stylized **page_3**) is a hidden online "newsletter" and life update platform created by Xander Munc (you might know him) as a place to store ideas, share thoughts and current projects, and provide life updates that might not come up otherwise. Designed to be shared only with his close friends, its goal is to *keep his loop in the loop* (even if it's never read). 
+Page Three (stylized **page_3**) is a secret online "newsletter" and life update platform created by Xander Munc (you might know him) as a place to store ideas, share thoughts and current projects, and provide life updates that might not come up otherwise. Designed to be shared only with his close friends, its goal is to *keep his loop in the loop* (even if it's never read). 
 
 ## How to find it
 
@@ -16,6 +16,8 @@ Page Three can be found in a few ways:
 
 ## How to keep it a secret 
 #### Written by XM and his team of creatives*
+
+![image](ambigram.png)
 
 Page Three can be kept a secret in many ways but here are a few of our favorites:
     1. Write the url in a food-safe writing medium of your choice (sauce, food dye, food coloring markers, ect) on the inside of a sandwich or foldable consumable. As long as the url is concealed within, you are keeping it a secret. As a bonus measure consume the meal to be sure the secret is thoroughly kept. 
@@ -43,7 +45,7 @@ Links are stylized as un-italicized blue words like this: [link](https://example
 
 ### 3. Special interactivity
 
-Audience members who view these articles from a desktop or device with mouse interactivity will find that they can *move the article frame* itself. An interaction not available to mobile viewers.
+Audience members who view these articles from a desktop or device with mouse interactivity will find that they can *move the article frame* itself. An interaction not available to mobile viewers (or on desktop safari (idk why)). 
 
 ## Write to us!
 
@@ -58,7 +60,7 @@ Page Three is the third page in a series of X's online published work (appropria
 
 Click [here](https://xandermunc.art/) to view page one. [Here](https://xandermunc.art/glossary/) for page two. You are already on Page Three. **And don't even bother searching for *page four...***
 
-Future releases will probably be *much* shorter. 
+Future releases will probably be *much* shorter. This release was intended to *say hello* and get aquatinted. Next release will include standard topics and any new sorts of bits and bops that come to mind (time permitting).
 
 ```plaintext 
 :root { --white: #eee; --black: #111; --red: #f30; --blue: #09f; --yellow: #f90; --curve: cubic-bezier(0.2, 0, 0.2, 1); }
