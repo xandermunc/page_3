@@ -49,7 +49,7 @@ Audience members who view these articles from a desktop or device with mouse int
 
 ## Write to us!
 
-We'd (I'd) love to hear what you have to say! Just say həˈlō, bonjour, 
+We'd (I'd) love to hear what you have to say! Just say hə'lō, bonjour, 
 こんにちは, or whatever you'd like and I am all ears 👂👂👂.
 
 Just click this [link](mailto:xandermunc@gmail.com).
