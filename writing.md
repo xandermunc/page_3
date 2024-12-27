@@ -58,6 +58,8 @@ Page Three is the third page in a series of X's online published work (appropria
 
 Click [here](https://xandermunc.art/) to view page one. [Here](https://xandermunc.art/glossary/) for page two. You are already on Page Three. **And don't even bother searching for *page four...***
 
+Future releases will probably be *much* shorter. 
+
 ```plaintext 
 :root { --white: #eee; --black: #111; --red: #f30; --blue: #09f; --yellow: #f90; --curve: cubic-bezier(0.2, 0, 0.2, 1); }
 ```
