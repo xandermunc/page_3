@@ -7,12 +7,14 @@ const b = document.querySelector('.b');
 const s = document.querySelector('.s');
 const h1 = document.querySelectorAll('h1');
 const h2 = document.querySelectorAll('h2');
+const h3 = document.querySelectorAll('h3');
+const h4 = document.querySelectorAll('h4');
 const p = document.querySelectorAll('p');
 
 const body = document.body;
 
-svg.addEventListener('click', function (event) {
-    event.stopPropagation();
+// svg.addEventListener('click', function (event) {
+    // event.stopPropagation();
     frame.classList.add('active');
     l.classList.add('active');
     r.classList.add('active');
@@ -21,8 +23,10 @@ svg.addEventListener('click', function (event) {
     s.classList.add('active');
     h1.forEach(el => el.classList.add('active'));
     h2.forEach(el => el.classList.add('active'));
+    h3.forEach(el => el.classList.add('active'));
+    h4.forEach(el => el.classList.add('active'));
     p.forEach(el => el.classList.add('active'));
-});
+// });
 
 body.addEventListener('click', function (event) {
     if (!frame.contains(event.target)) {
@@ -34,6 +38,8 @@ body.addEventListener('click', function (event) {
         s.classList.remove('active');
         h1.forEach(el => el.classList.remove('active'));
         h2.forEach(el => el.classList.remove('active'));
+        h3.forEach(el => el.classList.remove('active'));
+        h4.forEach(el => el.classList.remove('active'));
         p.forEach(el => el.classList.remove('active'));
     }
 });
