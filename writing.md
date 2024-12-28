@@ -1,6 +1,6 @@
 # Page_3 
 
-> last updated: 12/26/24 
+> last updated: 12/28/24 
 > new material! 
 
 ## About 
@@ -57,7 +57,7 @@ Just click this [link](mailto:xandermunc@gmail.com).
 ## Some fun functionality 
 #### (fun)ctionality
 
-One day (maybe) our advanced team of programmers (me) will make a menu for this interface (maybe). But until then enjoy pressing these buttons: **Light Mode** **Fullscreen**
+One day (maybe) our advanced team of programmers (me) will make a menu for this interface (maybe). But until then enjoy pressing these buttons: **Light Mode** **Fullscreen** (some might only be viewable on desktop devices).
 
 ## A final note about the *pages*
 

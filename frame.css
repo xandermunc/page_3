@@ -32,7 +32,6 @@
     width: 80vw;
     height: 100vh;
     border-radius: 0;
-    /* background-color: yellow; */
 }
 
 /* .frame.active:hover {
@@ -51,9 +50,4 @@
         width: 90vw;
         height: 90vw;
     }
-
-    .frame.fullscreen {
-        height: 100vh;
-    }
-
 }

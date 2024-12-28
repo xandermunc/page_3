@@ -204,4 +204,8 @@ img {
     body {
         height: 95vh;
     }
+
+    #fullscreen {
+        display: none;
+    }
 }
