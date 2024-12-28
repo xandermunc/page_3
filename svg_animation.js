@@ -13,8 +13,8 @@ const p = document.querySelectorAll('p');
 
 const body = document.body;
 
-// svg.addEventListener('click', function (event) {
-    // event.stopPropagation();
+svg.addEventListener('click', function (event) {
+    event.stopPropagation();
     frame.classList.add('active');
     l.classList.add('active');
     r.classList.add('active');
@@ -26,7 +26,7 @@ const body = document.body;
     h3.forEach(el => el.classList.add('active'));
     h4.forEach(el => el.classList.add('active'));
     p.forEach(el => el.classList.add('active'));
-// });
+});
 
 body.addEventListener('click', function (event) {
     if (!frame.contains(event.target)) {
