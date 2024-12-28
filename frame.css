@@ -45,9 +45,12 @@
 
 @media (max-width: 650px) {
 
-    .frame.active,
-    .frame.active:hover {
+    .frame.active {
         width: 90vw;
         height: 90vw;
+    }
+
+    .frame.fullscreen {
+        height: 100vh;
     }
 }
