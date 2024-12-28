@@ -70,3 +70,7 @@
     transform-origin: center;
     transition: all 0.6s var(--curve);
 }
+
+.svg.fullscreen {
+    opacity: 0;
+}

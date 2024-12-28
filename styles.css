@@ -6,6 +6,24 @@
     --blue: #09f;
     --yellow: #f90;
     --curve: cubic-bezier(0.2, 0, 0.2, 1);
+    --padding: 15px;
+    --padding-large: 40px;
+    --unchanged-padding: 15px;
+    --img-width: 100%;
+}
+
+:root.light {
+    --white: #111;
+    --black: #ddd;
+    --red: #f9c;
+    --blue: #09f;
+    --yellow: #fa0;
+}
+
+:root.fullscreen {
+    --padding: 8vw;
+    --padding-large: 16vw;
+    --img-width: 50%;
 }
 
 * {
@@ -25,6 +43,7 @@ body {
     font-family: system-ui;
     cursor: default;
     overflow: hidden;
+    transition: background-color 0.6s var(--curve);
 }
 
 /* #endregion */
@@ -49,9 +68,9 @@ h2 {
 h3 {
     color: var(--yellow);
     font-size: 1em;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    padding-bottom: var(--unchanged-padding);
     opacity: 0;
     transition: opacity 0.4s var(--curve);
 }
@@ -59,9 +78,9 @@ h3 {
 h4 {
     color: var(--blue);
     font-size: 0.8em;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    padding-bottom: var(--unchanged-padding);
     opacity: 0;
     transition: opacity 0.4s var(--curve);
 }
@@ -69,9 +88,9 @@ h4 {
 p {
     color: var(--white);
     font-size: 1em;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    padding-bottom: var(--unchanged-padding);
     opacity: 0;
     transition: opacity 0.4s var(--curve);
 }
@@ -96,8 +115,8 @@ p.active {
 
 .mono {
     font-family: monospace;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: var(--padding-large);
+    padding-right: var(--padding-large);
 }
 
 .small {
@@ -110,8 +129,17 @@ ol {
 }
 
 li {
-    padding-left: 40px;
-    padding-right: 15px;
+    padding-left: var(--padding-large);
+    padding-right: var(--padding);
+}
+
+.button {
+    color: var(--red);
+    transition: all 0.2s var(--curve);
+}
+
+.button:hover {
+    color: var(--yellow);
 }
 
 .red {
@@ -160,7 +188,7 @@ li {
 }
 
 img {
-    width: 100%;
+    width: var(--img-width);
     height: auto;
 }
 

@@ -23,6 +23,18 @@
     -ms-overflow-style: none;
 }
 
+.frame.light {
+    background-color: rgba(221, 221, 221, 0.5);
+}
+
+.frame.fullscreen {
+    border: 0px solid var(--white);
+    width: 80vw;
+    height: 100vh;
+    border-radius: 0;
+    /* background-color: yellow; */
+}
+
 /* .frame.active:hover {
             width: 31vw;
             height: 31vw;
@@ -38,6 +50,10 @@
     .frame.active:hover {
         width: 90vw;
         height: 90vw;
+    }
+
+    .frame.fullscreen {
+        height: 100vh;
     }
 
 }
